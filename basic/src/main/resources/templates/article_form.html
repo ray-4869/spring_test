@@ -1,13 +1,16 @@
 
 <body>
-<form>
+<form th:action="@{/article/create}" method="post">
     <div>
-        <label for="title">제목</label>
-        <input type="text" id="title" name="title">
+        <label for="title" class="form-label">제목</label>
+        <input type="text" id="title" name="title" class="form-control">
     </div>
     <div>
-        <label for="content">제목</label>
-        <input type="text" id="content" name="content">
+        <label for="content" class="form-label">내용</label>
+        <textarea name="content" id="content" rows="10" class="form-control"></textarea>
+    </div>
+    <div>
+        <input type="submit" value="등록">
     </div>
 </form>
 </body>

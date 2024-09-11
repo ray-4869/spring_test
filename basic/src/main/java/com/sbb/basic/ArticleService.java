@@ -10,13 +10,10 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Service
 public class ArticleService {
-
     private final ArticleRepository articleRepository;
-
     public List<Article> getList() {
         return this.articleRepository.findAll();
     }
-
     public Article getArticle(Integer id) {
         Optional<Article> article = this.articleRepository.findById(id);
         if(article.isPresent()){
@@ -25,7 +22,6 @@ public class ArticleService {
             throw new DataNotFoundException("article not found");
         }
     }
-
     public void create(String title, String content) {
         Article a = new Article();
         a.setTitle(title);

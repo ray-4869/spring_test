@@ -23,17 +23,16 @@ public class ArticleController {
         model.addAttribute("articleList", articleList);
         return "article_list";
     }
-    @GetMapping("/article/detail/{id}")
+    @GetMapping(value = "/article/detail/{id}")
     public String detail (Model model, @PathVariable("id") Integer id){
         Article article = this.articleService.getArticle(id);
         model.addAttribute("articleList");
         return "article_detail";
     }
     @GetMapping("/article/create")
-    public String create () {
+    public String create (ArticleForm articleForm) {
         return "article_form";
     }
-
     @PostMapping("/article/create")
     public String create(@Valid ArticleForm articleForm, BindingResult bindingResult){
         if(bindingResult.hasErrors()){

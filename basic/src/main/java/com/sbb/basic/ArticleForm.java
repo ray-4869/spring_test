@@ -14,6 +14,4 @@ public class ArticleForm {
 
     @NotEmpty(message = "내용 입력")
     private String content;
-
-
 }
