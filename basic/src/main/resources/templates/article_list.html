@@ -1,13 +1,17 @@
 <table>
     <thead>
     <tr>
+        <th>번호</th>
         <th>제목</th>
         <th>작성일시</th>
     </tr>
     </thead>
     <tbody>
-    <tr th:each="article : ${articleList}">
-        <td th:text="${article.title}"></td>
+    <tr th:each="article, loof : ${articleList}">
+        <td th:text="${loof.count}"></td>
+        <td>
+            <a th:href="@{|/article/detail/${article.id}|}" th:text="${article.title}"></a>
+        </td>
         <td th:text="${article.createDate}"></td>
     </tr>
     </tbody>

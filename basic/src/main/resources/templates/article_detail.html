@@ -1,2 +1,18 @@
-<td th:text="${article.title}"></td>
-<td th:text="${article.content}"></td>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Article Detail</title>
+</head>
+<body>
+<h1>Article Detail</h1>
+<table>
+    <tr>
+        <td th:text="${article.title}">Title</td>
+    </tr>
+    <tr>
+        <td th:text="${article.content}">Content</td>
+    </tr>
+</table>
+<a th:href="@{/article/list}">목록</a>
+</body>
+</html>
